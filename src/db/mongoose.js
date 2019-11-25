@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 // revisa tu connectionURL aqui :-)
-const connectionURL= 'mongodb+srv://admin:admin@cluster0-ed9b9.mongodb.net/test?retryWrites=true&w=majority'
+const connectionURL= process.env.DB_CONNECTION_STRING || require('../config.js').connectionURL
 
 mongoose.connect( connectionURL, {
   useNewUrlParser: true,
